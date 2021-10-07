@@ -2,7 +2,7 @@
 
 Shared Python files to achieve some mathematical algorithms and equation solving
 
-This is an algorithm about python, how to use it?
+This is an algorithm package about python, how to use it?
 
 If you are ubuntu: just run **sudo pip3 install frogpy** in the terminal
 
