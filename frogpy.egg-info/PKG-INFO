@@ -10,7 +10,7 @@ Platform: UNKNOWN
 Requires-Python: >=3.6
 License-File: LICENSE
 
-# dinosaur
+# frogpy
 Shared Python files to achieve some mathematical algorithms and equation solving
 
 
