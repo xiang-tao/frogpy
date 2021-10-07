@@ -1,4 +1,3 @@
-import fealpy
 from frogpy.algebra import matrix
 
 a = matrix.tri_diagonal(4, 2, 1, 1)
