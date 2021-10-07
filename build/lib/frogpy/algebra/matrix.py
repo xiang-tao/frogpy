@@ -8,7 +8,7 @@ def Maindiagonal(n, r):
     :param r: 对角线元素
     :return: 一个对角矩阵
     """
-    a = np.zeros((n,n))
+    a = np.zeros((n, n))
     for i in range(n):
         a[i][i] = r
     return a
@@ -24,12 +24,12 @@ def tri_diagonal(n, r1, r2, r3):
     :param r3: 次下对角元素
     :return: 对称正定的矩阵(或者说是三对角矩阵)
     """
-    a = np.zeros((n,n))
+    a = np.zeros((n, n))
     for i in range(n):
         if i == 0:
             a[i][i] = r1
-            a[i][i+1] = r2
-        elif i == n-1:
+            a[i][i + 1] = r2
+        elif i == n - 1:
             a[i][i] = r1
             a[i][i - 1] = r3
         else:
@@ -49,18 +49,18 @@ def M_tri_diagonal(nx, ny, b1, b2, b3):
     :param b3: 次下对角块矩阵
     :return: 一个五带的对称正定矩阵
     """
-    N = nx*ny
-    a = np.zeros((N,N))
+    N = nx * ny
+    a = np.zeros((N, N))
     for i in range(nx):
         if i == 0:
-            a[0:ny,0:ny] = b1
-            a[0:ny,ny:2*ny] = b2
-        elif i == nx-1:
-            a[N-ny:N, N-ny:N] = b1
-            a[N-ny:N, N-2*ny:N-ny] = b3
+            a[0:ny, 0:ny] = b1
+            a[0:ny, ny:2 * ny] = b2
+        elif i == nx - 1:
+            a[N - ny:N, N - ny:N] = b1
+            a[N - ny:N, N - 2 * ny:N - ny] = b3
         else:
-            a[i*ny:(i+1)*ny,i*ny:(i+1)*ny] = b1
-            a[i*ny:(i+1)*ny, (i+1)*ny:(i+2)*ny] = b2
+            a[i * ny:(i + 1) * ny, i * ny:(i + 1) * ny] = b1
+            a[i * ny:(i + 1) * ny, (i + 1) * ny:(i + 2) * ny] = b2
             a[i * ny:(i + 1) * ny, (i - 1) * ny:i * ny] = b3
     return a
 
@@ -95,3 +95,10 @@ def csrmatrix(A, data, indices, indptr):
                 indices.append(j)
                 k += 1
         indptr.append(k)
+
+
+# 写一些测试内容，在次判断下导入该包的文件不会输出这些内容
+# 也可以单独写一个函数来写测试内容，然后在这里调用它,比如def main():
+if __name__ == "__main__":
+    print("test")
+    # main()
