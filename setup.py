@@ -1,18 +1,19 @@
-from setuptools import setup, find_packages
+# from distutils.core import setup
+from setuptools import setup,find_packages
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+
+def readme_file():
+    with open("README.md", encoding="utf-8") as rf:
+        return rf.read()
+
 
 setup(
-    name="dinosaur",  # This is the name of the package
+    name="frogpy",  # 需要打包的名字
     version="0.0.1",  # The initial release version
+    description="frogpy: Implement algorithms and solve equations",
+    packages=find_packages(),
     author="Tao Xiang",  # Full name of the author
-    url = "https://github.com/xiang-tao/dragon",
+    url="https://github.com/xiang-tao",
     author_email="xiangtao@smail.xtu.edu.cn",
-    description="dinosaur:Solve equations and design algorithms",
-    long_description=long_description,  # Long description read from the the readme file
-    packages = find_packages(),
-    include_package_data = True,
-    platforms = "any",
-    install_requires = []
+    long_description=readme_file()
 )
